@@ -1,0 +1,35 @@
+public class Calculator {
+
+    double calculation(String token, int firstVal, int secondVal){
+        double result = 0;
+        if(token.equals("sum")){
+            result = firstVal+secondVal;
+        }else if(token.equals("multiply")){
+            result = firstVal*secondVal;
+        }
+        return result;
+    }
+    double summation(int firstVal, int secondVal){
+        double result = 0;
+
+        if(firstVal < secondVal){
+            for(int i = firstVal; i<=secondVal; i++){
+                result = result+i;
+            }
+        }else{
+            System.out.println("First Value should be less then Second value");
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Calculator obj = new Calculator();
+
+        double val1 = obj.calculation("multiply", 5, 10);
+        System.out.println(val1);
+
+        double val2 = obj.summation(1, 10);
+        System.out.println(val2);
+
+    }
+}

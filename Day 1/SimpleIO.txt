@@ -1,0 +1,28 @@
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class SimpleIO {
+    public static void main(String args[])
+            
+    {
+
+        // InputStreamReader class to read input
+        InputStreamReader inp = null;
+
+        // Storing the input in inp
+        inp = new InputStreamReader(System.in);
+
+        System.out.println("Enter characters, "
+                + " and '0' to quit.");
+        char c = 'a';
+        do {
+            try {
+                c = (char)inp.read();
+                System.out.println(c);
+            } catch (IOException e) {
+                System.out.println("No input source found.");
+            }
+            
+        } while (c != '0');
+    }
+}
